@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>CANTINA IFB</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <!--<script type="text/javascript" src="javascript.js"></script>-->
+
+
+    <link rel="stylesheet" href="lib/owlcarousel2/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/owlcarousel2/dist/assets/owl.theme.default.min.css">
+
+</head>
+
+<body>
+    <nav>
+
+        <a href="index.html" id="inicio" class="amenu">INICIO</a>
+        <a href="index.html" class="amenu">PROMOÇÕES</a>
+        <a href="index.html" class="amenu">CARDÁPIO</a>
+        <a href="pedidos.html" class="amenu">PEDIDOS</a>
+
+    </nav>
+    <header>
+
+        <img src="img/imgseg.png" alt="Banner da home page, traz fotos de comidas" />
+    </header>
+
+
+    <h1>PEDIDOS</h1>
+    <p id="frase"> Escolha seu pedido: </p>
+
+
+    <form name="pedidos" method="POST" action="#pedidos.php">
+
+
+        <p><label for="ham">LANCHES:</label>&nbsp;
+            <select name="ham" id="s1" class="form-control">
+                <option value="99">Selecione</option>
+                <option value="1">TAPIOCA R$6,00 </option>
+                <option value="2">BOLO R$3,00</option>
+                <option value="3">HAMBUGUER R$12,00</option>
+                <option value="4">PIZZA FATIA R$5,00</option>
+                <option value="5">SALGADO R$4,00</option>
+                <option value="6">OMELETE R$6,00</option>
+                <option value="7">BATATA FRITA R$5,00</option>
+                <option value="8">PASTEL R$4,00</option>
+                <option value="9">SANDUICHE R$5,00</option>
+                <option value="10">HOT-DOG R$6,00</option>
+            </select></p>
+
+
+
+        <p><label for="beb">BEBIDAS: </label> &nbsp;
+            <select name="beb" id="s2" class="form-control">
+                <option value="999">Selecione</option>
+
+                <option value="12">COCA-COLA LATA R$4,00</option>
+                <option value="13">FANTA LARANJA LATA R$4,00</option>
+                <option value="14">MILK-SHAKE R$10,00</option>
+                <option value="15">SUCO R$5,00</option>
+                <option value="16">LIMONADA R$8,00</option>
+            </select></p>
+
+        <p><label for="name"> NOME: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input placeholder="(Coloque seu nome)" type="text" name="name" id="cpNome" class="" required />
+        </p>
+
+
+
+        <p><label for="tel">CELULAR: </label>&nbsp;
+
+            <input type="tel" pattern="^\(?\d{2}\)\d{5}[-\s]\d{4}.*?$" name="tel" id="cpTel" maxlength="19"
+                placeholder="(99)99999-9999" class="" required /></p>
+
+        <p>
+            <div id="res" class="form-control"></div>
+        </p>
+
+
+
+        <!--
+          <p><label for="login">E-mail:</label>
+<input  type="text" name="name" id="res" class="form-control" /> </p>
+            <input type="text" name="E-mail" id="E-mail" required maxlength="40" placeholder="usuario@gmail.com" class="form-control" /></p>
+
+             
+            
+         -->
+
+
+
+
+
+
+
+
+        <P><input type="button" name="butao" value="SOMAR" class="" id="btnSomar" onclick="somarValores()" />
+
+            <input type="button" name="butao" value="FECHAR COMPRA" class="" id="btnEnviar" onclick="redirecionarPagseguro()"  />
+            <input type="reset" name="butao-reset" value="CANCELAR" class="" id="btnCancelar"
+                onclick="redirecionar()" />
+
+
+        </P>
+        
+         <script>
+            function redirecionar() {
+                window.location.href = "pedidos.html";
+            }
+        </script>
+        <script>
+            function somarValores() {
+
+
+                var s1 = document.querySelector("#s1").value;
+                var s2 = document.querySelector("#s2").value;
+                if (s1 == 1) {
+                    var lnome = 'Tapioca';
+                    var lpreco = 6;
+
+                } else if (s1 == 2) {
+                    var lnome = 'Bolo';
+                    var lpreco = 3;
+
+                } else if (s1 == 3) {
+                    var lnome = 'Hamburguer';
+                    var lpreco = 12;
+
+                } else if (s1 == 4) {
+                    var lnome = 'Pizza';
+                    var lpreco = 5;
+
+                } else if (s1 == 5) {
+                    var lnome = 'Salgado';
+                    var lpreco = 4;
+
+                } else if (s1 == 6) {
+                    var lnome = 'Omelete';
+                    var lpreco = 6;
+
+                } else if (s1 == 7) {
+                    var lnome = 'Batata Frita';
+                    var lpreco = 5;
+
+                } else if (s1 == 8) {
+                    var lnome = 'Pastel';
+                    var lpreco = 4;
+
+                } else if (s1 == 9) {
+                    var lnome = 'Sanduiche';
+                    var lpreco = 5;
+
+                } else if (s1 == 10) {
+                    var lnome = 'Hot-dog';
+                    var lpreco = 6;
+
+                } else {
+                    var lnome = 'Não selecionado';
+                    var lpreco = 0;
+
+                }
+
+
+
+
+
+
+
+
+
+                if (s2 == 12) {
+                    var bnome = 'coca-cola';
+                    var bpreco = 4;
+
+                } else if (s2 == 13) {
+                    var bnome = 'fanta laranja';
+                    var bpreco = 4;
+                } else if (s2 == 14) {
+                    var bnome = 'milk-shake';
+                    var bpreco = 10;
+                } else if (s2 == 15) {
+                    var bnome = 'suco';
+                    var bpreco = 5;
+                } else if (s2 == 16) {
+                    var bnome = 'limonada';
+                    var bpreco = 8;
+                }
+                else {
+                    var bnome = 'Não Selecionado';
+                    var bpreco = 0;
+                }
+
+                if ((s1 == 99) && (s2 == 999)) {
+                    res.innerHTML = 'Nada Selecionado';
+                } else if ((s1 == 99)) {
+                    var s3 = (parseInt(lpreco) + parseInt(bpreco));
+                    var s6 = `${bnome}`;
+
+                    var s4 = `${s6}: R$ ${s3},00`
+                    res.innerHTML = s4;
+                }else if ((s2 == 999)) {
+                    var s3 = (parseInt(lpreco) + parseInt(bpreco));
+                    var s6 = `${lnome}`;
+
+                    var s4 = `${s6}: R$ ${s3},00`
+                    res.innerHTML = s4;
+                }
+                else {
+                    var s3 = (parseInt(lpreco) + parseInt(bpreco));
+                    var s6 = `${lnome} com ${bnome}`;
+
+                    var s4 = `${s6}: R$ ${s3},00`
+                    res.innerHTML = s4;
+
+                }
+
+
+
+
+            }
+        </script>
+        <script>
+            function redirecionarPagseguro() {
+                var s1 = document.querySelector("#s1").value;
+                var s2 = document.querySelector("#s2").value;
+                var s8 = document.querySelector("#cpTel").value;
+                var s9 = document.querySelector("#cpNome").value;
+                if ((s1 == 99) && (s2 == 999)) {
+                    res.innerHTML = 'Selecione algo antes de fechar a compra!';
+                } else if ((s8=='')||(s9=='')) {
+                    res.innerHTML = 'Preencha os campos!';
+                }else
+                {
+                    window.location.href = "https://pag.ae/7VqVr1Am3";
+                }
+
+                
+            }
+        </script>
+
+    </form>
+
+
+
+
+
+    </section>
+
+
+    <footer>
+        <p>Desenvolvido por <a href="https://www.facebook.com/natanael.batista.9" target="_blank">VisualTecBSB</a> -
+            2019</p>
+    </footer>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/owlcarousel2/dist/owl.carousel.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/efeitos.js"></script>
+</body>
+
+</html>
