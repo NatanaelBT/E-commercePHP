@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
@@ -6,9 +6,9 @@
 	<title>CANTINA IFB</title>
 	<meta charset="utf-8" />
 
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link rel="stylesheet" href="lib/owlcarousel2/dist/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="lib/owlcarousel2/dist/assets/owl.theme.default.min.css">
+	<?php
+require('css.php');
+?>
 
 	<!--<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
@@ -19,17 +19,9 @@
 </head>
 
 <body>
-	<nav>
-
-		<a href="#" id="inicio" class="amenu">INICIO</a>
-		<a href="#pag_promo" class="amenu">PROMOÇÕES</a>
-		<a href="#pag_card" class="amenu">CARDÁPIO</a>
-		<a href="pedidos.html" class="amenu">PEDIDOS</a>
-	</nav>
-	<header>
-
-		<img id="img-banner" src="img/imgseg.png" alt="Banner da home page, traz fotos de comidas" />
-	</header>
+<?php
+require('head.php');
+?>
 
 
 
@@ -138,16 +130,13 @@
 
 		<script>
 			function redirecionar() {
-				window.location.href = "pedidos.html";
+				window.location.href = "login.php";
 			}
 		</script>
 	</section>
 
 
-	<footer id="foot">
-		<p>Desenvolvido por <a href="https://www.facebook.com/natanael.batista.9" target="_blank">VisualTecBSB</a> -
-			2019</p>
-	</footer>
+
 	<script src="lib/jquery/jquery.min.js"></script>
 	<script src="lib/owlcarousel2/dist/owl.carousel.min.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -155,7 +144,9 @@
 
 
 
-
+<?php
+require('footer.php');
+?>
 
 
 </body>
