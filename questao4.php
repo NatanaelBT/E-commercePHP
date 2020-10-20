@@ -18,6 +18,7 @@ require('head.php');
         email: <input type="text" name="email"><br>
         Login: <input type="text" name="login"><br>
         Senha: <input type="text" name="senha"><br>
+        Telefone: <input type="text" name="telefone"><br>
         <input type="submit" value="Cadastrar">
 
     </form>

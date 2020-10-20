@@ -4,6 +4,7 @@
 		<a href="#pag_promo" class="amenu">PROMOÇÕES</a>
 		<a href="#pag_card" class="amenu">CARDÁPIO</a>
 		<a href="login.php" class="amenu">PEDIDOS</a>
+			
 	</nav>
 	<header>
 

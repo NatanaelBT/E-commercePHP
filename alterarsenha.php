@@ -17,7 +17,7 @@ $salt = 'ashd9asd#%wqe!eq'.$login;
 $senha_hash = sha1($salt.$senha);
 
 $ps = $pdo->prepare(
-    'SELECT * FROM usuario WHERE login = ? AND senha = ?'
+    'SELECT * FROM tb_cliente WHERE login = ? AND senha = ?'
 );
 $ps->execute([$login, $senha_hash]);
 
@@ -26,7 +26,7 @@ if (($linha = $ps->fetch()) && ($newSenha == $newSenha2)) {
     $senha_hash1 = sha1($salt.$newSenha);
 
     $ps = $pdo->prepare("
-        UPDATE usuario
+        UPDATE tb_cliente
         SET senha = ?
         WHERE login = ?
     

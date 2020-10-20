@@ -11,7 +11,7 @@ $salt = 'ashd9asd#%wqe!eq'.$login;
 $senha_hash = sha1($salt.$senha);
 
 $ps = $pdo->prepare(
-    'SELECT * FROM usuario WHERE login = ? AND senha = ?'
+    'SELECT * FROM tb_cliente WHERE login = ? AND senha = ?'
 );
 $ps->execute([$login, $senha_hash]);
 
@@ -19,10 +19,11 @@ if ($linha = $ps->fetch()) {
     $_SESSION['login'] = $linha['login'];
     $_SESSION['nome'] = $linha['nome'];
     $_SESSION['email'] = $linha['email'];
-    echo '<a href="only.php">Ir para pagina</a><br>';
-    echo '<a href="alterar.html">Redefinir Senha</a>';
+    echo '<meta http-equiv="refresh" content="0;url=pedidos.php">';
+    //echo '<a href="alterar.html">Redefinir Senha</a>';
 }
 else {
-    echo 'Erro na autenticação';
+    echo '<script> alert("Erro na autenticação!")</script>';
+    echo '<meta http-equiv="refresh" content="0;url=login.php">';
     exit;
 }

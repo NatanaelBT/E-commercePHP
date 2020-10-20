@@ -2,7 +2,7 @@
 
 try{
     $pdo = new PDO(
-        'mysql:host=localhost;dbname=lista12;charset=utf8;port=3306',
+        'mysql:host=localhost;dbname=db_ecommerce;charset=utf8;port=3306',
         'root',''
     );
 }
