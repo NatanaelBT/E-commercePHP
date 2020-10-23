@@ -26,7 +26,10 @@ if (
         cadastrarCliente($nome, $email, $login, $senha, $telefone);
     }
 }else {
-    echo 'Erro! Dados inválidos!';
+    
+    echo '<script> alert("Erro! Dados inválidos!!")</script>';
+    echo '<meta http-equiv="refresh" content="0;url=fazercadastro.php">';
+
 }
 
 // Separar as funções do restando do código
@@ -51,7 +54,7 @@ function cadastrarCliente($nome, $email, $login, $senha, $telefone)
     } else {
         echo 'Erro ao Cadastrar';
         echo '<script> alert("Usuario já existe!")</script>';
-        echo '<meta http-equiv="refresh" content="0;url=questao4.php">';
+        echo '<meta http-equiv="refresh" content="0;url=fazercadastro.php">';
 
     }
 }
@@ -75,6 +78,7 @@ function valido_senha($a)
     } else {
         return true;
     }
+}
     
     function valido_nome($a)
     {
@@ -97,9 +101,15 @@ function valido_senha($a)
     }
     function valido_telefone($a)
     {
-        return true;
+        if(strlen(trim($a) == 0)){
+            echo "Erro! Campo telefone obrigatório não preenchido";
+            
+        }else {
+            return true;
+        }
+        
     }
-}
+
 
 
 

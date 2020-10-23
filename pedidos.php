@@ -1,4 +1,11 @@
-<?php require('cabecalho.php'); ?>
+<?php require('cabecalho.php'); 
+
+@session_start();
+if(isset($_SESSION['nome'])){
+    echo "<br><br><h3>Olá $_SESSION[nome]</h3><br>";
+}
+
+?>
 
     <h1>PEDIDOS</h1>
     <p id="frase"> Escolha seu pedido: </p>

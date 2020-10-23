@@ -1,14 +1,9 @@
-<?php require('autentica.php');
-
-
-
-
+<?php 
 
 require('db.php');
 
-$nome = $_SESSION['nome'];
-$email = $_SESSION['email'];
-$login = $_SESSION['login'];
+
+$login = $_POST['login'];
 $senha = $_POST['senha'];
 $newSenha = $_POST['newSenha'];
 $newSenha2 = $_POST['newSenha2'];
@@ -33,12 +28,14 @@ if (($linha = $ps->fetch()) && ($newSenha == $newSenha2)) {
             ");
     $ps->execute([$senha_hash1, $login]);
     
-    echo 'Senha Alterada';
+    
+    echo '<script> alert("Senha Alterada!!")</script>';
+    echo '<meta http-equiv="refresh" content="0;url=login.php">';
 
 }
 else {
-    echo 'Erro. Senha atual errada ou senhas não combinam';
-    exit;
+    echo '<script> alert("Erro. Dados não conferem!!!")</script>';
+    echo '<meta http-equiv="refresh" content="0;url=alterar.php">';
 }
 
 
