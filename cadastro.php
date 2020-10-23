@@ -2,11 +2,11 @@
 
 require('db.php');
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$login = $_POST['login'];
-$senha = $_POST['senha'];
-$telefone = $_POST['telefone'];
+$nome = strip_tags($_POST['nome']);
+$email = strip_tags($_POST['email']);
+$login = strip_tags($_POST['login']);
+$senha = strip_tags($_POST['senha']);
+$telefone = strip_tags($_POST['telefone']);
 
 if (
     valido_login($login) && //Tem que fazer os codigos de validação de dados
@@ -57,19 +57,48 @@ function cadastrarCliente($nome, $email, $login, $senha, $telefone)
 }
 
 function valido_login($a){
-    return true;
+    if(strlen(trim($a)) == 0) {
+        echo "Erro! Campo login obrigatório
+        não preenchido";
+        }
+        else{
+            return true;
+        }
+        
+        
 }
-function valido_senha($a){
-    return true;
-}
-function valido_nome($a){
-    return true;
-}
-function valido_email($a){
-    return true;
-}
-function valido_telefone($a){
-    return true;
+function valido_senha($a)
+{
+    if (strlen(trim($a)) == 0) {
+        echo "Erro! Campo senha obrigatório
+        não preenchido";
+    } else {
+        return true;
+    }
+    
+    function valido_nome($a)
+    {
+        if (strlen(trim($a)) == 0) {
+            echo "Erro! Campo nome obrigatório
+        não preenchido";
+        } else {
+            return true;
+        }
+    }
+    function valido_email($a)
+    {
+        if (filter_var($a, FILTER_VALIDATE_EMAIL)) {
+            echo 'E-mail válido.';
+            return true;
+        } else {
+            echo 'E-mail inválido.';
+            return false;
+        }
+    }
+    function valido_telefone($a)
+    {
+        return true;
+    }
 }
 
 

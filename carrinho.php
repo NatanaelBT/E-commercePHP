@@ -1,4 +1,5 @@
 <?php 
+require('cabecalho.php'); 
 require('autentica.php');
 require('db.php');
 
@@ -46,9 +47,9 @@ $ps = $pdo->prepare("
 
     if ($ps -> rowCount() == 1) {
 
-        echo "Seu pedido é $lancheNome com $bebidaNome<br>";
+        echo "<h3>Seu pedido é $lancheNome com $bebidaNome<br></h3>";
        
-       echo "O total é R$$precoFinal";
+        echo "<h3>O total é R$$precoFinal<br></h3>";
         
     } else {
         
@@ -57,24 +58,35 @@ $ps = $pdo->prepare("
 
     }
 }
-
-
-
-
-    
+if ($precoFinal == 8) {
+    echo '<a href="https://pag.ae/7WwhSwQ9r" class="amenu">Pagamento</a>';
+}
+if ($precoFinal == 9) {
+    echo '<a href="https://pag.ae/7WwhTzwTM" class="amenu">Pagamento</a>';
+}
+if ($precoFinal == 10) {
+    echo '<a href="https://pag.ae/7WwhTWxB6" class="amenu">Pagamento</a>';
+}
+if ($precoFinal == 14) {
+    echo '<a href="https://pag.ae/7WwhU8H4t" class="amenu">Pagamento</a>';
+}
+if ($precoFinal == 15) {
+    echo '<a href="https://pag.ae/7WwhUfksM" class="amenu">Pagamento</a>';
+}
+if ($precoFinal == 16) {
+    echo '<a href="https://pag.ae/7WwhUuVsR" class="amenu">Pagamento</a>';
+}
+if ($precoFinal == 22) {
+    echo '<a href="https://pag.ae/7WwhUoGMa" class="amenu">Pagamento</a>';
+}
 
 
 ?> 
 
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
-</head>
-<body>
+
 <a href="limparcarrinho.php" class="amenu">Limpar Carrinho</a>
+
+
     
  
-</body>
-</html>
+<?php require('footer.php'); ?>

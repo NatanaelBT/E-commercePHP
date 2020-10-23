@@ -1,29 +1,4 @@
-
-<html lang="pt-br">
-
-<head>
-
-	<title>CANTINA IFB</title>
-	<meta charset="utf-8" />
-
-	<?php
-require('css.php');
-?>
-
-	<!--<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
-
-
-
-
-</head>
-
-<body>
-<?php
-require('head.php');
-?>
-
-
+<?php require('cabecalho.php'); ?>
 
 	<article>
 		<h1 id="nomedo">CANTINA IFB</h1>
@@ -38,62 +13,76 @@ require('head.php');
 
 	</article>
 
-
-
-
-
-
 	<section id="pag_promo">
 		<h2>Big Descontos</h2>
-
-
-
-		<table>
-			<thead>
-				<th colspan="5" id="lanches">NOSSAS MELHORES PROMOÇÕES!!</th>
-			</thead>
-			<tbody>
-				<tr id="imgs">
-
-					<td><a href="https://www.youtube.com/watch?v=DY_RHowHIFs" target="_blank">
-							<div class="galeria"><img src="img/combo.png" alt="" class="img-pro"
-									id="imagem"></div>
-					</td>
-					<td><a href="https://www.youtube.com/watch?v=zPPyY7wwKuk" target="_blank">
-							<div class="galeria"><img src="img/chesseburguer.jpg" alt="" class="img-pro">
-							</div>
-					</td>
-					<td><a href="https://www.youtube.com/watch?v=3liyuh5GOzE" target="_blank">
-							<div class="galeria"><img src="img/bolo.jpg" alt="" class="img-pro"></div>
-					</td>
-					<td><a href="https://www.youtube.com/watch?v=pzWLQOwOkoo" target="_blank">
-							<div class="galeria"><img src="img/acai.jpg" alt="" class="img-pro"></div>
-					</td>
-					<td><a href="https://www.youtube.com/watch?v=Eoe3TYWSymw" target="_blank">
-							<div class="galeria"><img src="img/omele.jpg" alt="" class="img-pro"></div>
-					</td>
-
-
-				</tr>
-				<tr id="nomes">
-					<td>Salgado + Refri </td>
-					<td>Queijo Burguer</td>
-					<td>Bolo</td>
-					<td>Açai</td>
-					<td>Omelete</td>
-
-				</tr>
-				<tr id="off">
-					<td>R$7,00</td>
-					<td>R$12,00</td>
-					<td>R$3,50</td>
-					<td>R$5,00</td>
-					<td>R$6,00</td>
-
-				</tr>
-			</tbody>
-
-		</table>
+			<div id="text_promo">
+				<p>NOSSAS MELHORES PROMOÇÕES!</p>
+			</div>
+			<div class="produtos">
+				<div>
+				<a href="https://www.youtube.com/watch?v=DY_RHowHIFs" target="_blank">
+					<img src="img/combo.png" alt="" class="img-pro" id="imagem">
+				</a>
+				</div>
+				<div>
+					<span>Salgado + Refri</span>
+				</div>
+				<div>
+					<span>R$7,00</span>
+				</div>
+			</div>
+			<div class="produtos">
+				<div >
+					<a href="https://www.youtube.com/watch?v=zPPyY7wwKuk" target="_blank">
+						<img src="img/chesseburguer.jpg" alt="" class="img-pro">
+					</a>
+				</div>
+				<div>
+					<span>Queijo Burguer</span>
+				</div>
+				<div>
+					<span>R$12,00</span>
+				</div>
+			</div>
+			<div class="produtos">
+				<div >
+					<a href="https://www.youtube.com/watch?v=3liyuh5GOzE" target="_blank">
+						<img src="img/bolo.jpg" alt="" class="img-pro">
+					</a>
+				</div>
+				<div>
+					<span>Bolo</span>
+				</div>
+				<div>
+					<span>R$3,50</span>
+				</div>
+			</div>
+			<div class="produtos">
+				<div >
+					<a href="https://www.youtube.com/watch?v=pzWLQOwOkoo" target="_blank">
+						<img src="img/acai.jpg" alt="" class="img-pro">
+					</a>
+				</div>
+				<div>
+					<span>Açai</span>
+				</div>
+				<div>
+					<span>R$5,00</span>
+				</div>
+			</div>
+			<div class="produtos">
+				<div >
+					<a href="https://www.youtube.com/watch?v=Eoe3TYWSymw" target="_blank">
+						<img src="img/omele.jpg" alt="" class="img-pro">
+					</a>
+				</div>
+				<div>
+					<span>Omelete</span>
+				</div>
+				<div>
+					<span>R$6,00</span>
+				</div>
+			</div>
 	</section>
 	<section id="pag_card">
 		<h2>CARDÁPIO</h2>
@@ -112,8 +101,6 @@ require('head.php');
 				<li>HOT-DOG <span class="vl">R$6,00</span></li>
 			</ol></br>
 
-			
-
 			<li>BEBIDAS</li>
 			<ol>
 				<li>COCA-COLA LATA <span class="vl">R$4,00</span> </li>
@@ -122,8 +109,6 @@ require('head.php');
 				<li>SUCO <span class="vl">R$5,00</span></li>
 				<li>LIMONADA <span class="vl">R$8,00</span></li>
 			</ol></br>
-
-
 
 		</ul>
 		<button id="fazerPedido" onclick="redirecionar()">FAZER PEDIDO</button>
@@ -135,20 +120,11 @@ require('head.php');
 		</script>
 	</section>
 
-
-
 	<script src="lib/jquery/jquery.min.js"></script>
 	<script src="lib/owlcarousel2/dist/owl.carousel.min.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/efeitos.js"></script>
 
-
-
 <?php
 require('footer.php');
 ?>
-
-
-</body>
-
-</html>
